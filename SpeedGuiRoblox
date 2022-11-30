@@ -1,0 +1,43 @@
+local ExploitV1 = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local TextLabel = Instance.new("TextLabel")
+local TextButton = Instance.new("TextButton")
+
+ExploitV1.Name = "ExploitV1"
+ExploitV1.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+ExploitV1.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+Frame.Parent = ExploitV1
+Frame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Frame.Position = UDim2.new(0.329427093, 0, 0.0411585346, 0)
+Frame.Size = UDim2.new(0, 375, 0, 257)
+
+TextLabel.Parent = Frame
+TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.Size = UDim2.new(0, 375, 0, 50)
+TextLabel.Font = Enum.Font.SourceSans
+TextLabel.Text = "Exploit V 0.1 - Joe's steal time game"
+TextLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel.TextSize = 14.000
+
+TextButton.Parent = Frame
+TextButton.BackgroundColor3 = Color3.fromRGB(85, 170, 255)
+TextButton.BorderColor3 = Color3.fromRGB(85, 170, 255)
+TextButton.Position = UDim2.new(0.0346666649, 0, 0.221789882, 0)
+TextButton.Size = UDim2.new(0, 84, 0, 50)
+TextButton.Font = Enum.Font.SourceSans
+TextButton.Text = "60 speed"
+TextButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextButton.TextScaled = true
+TextButton.TextSize = 5.000
+TextButton.TextStrokeTransparency = 0.000
+TextButton.TextWrapped = true
+
+local function MQDSD_fake_script() -- TextButton.LocalScript 
+	local script = Instance.new('LocalScript', TextButton)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 60
+	end)
+end
+coroutine.wrap(MQDSD_fake_script)()
